@@ -1,0 +1,78 @@
+div#calendar {
+    background: white;
+    div.concert_card {
+        margin: 10px 0;
+        padding: 0 15px;
+        position: relative;
+        div.band_venue {
+            h3 {
+                margin-top: 0;
+            }
+            .band {
+                font-size: 24px;
+                font-weight: 600;
+                @media (max-width: $phone) {
+                    font-size: 18px;
+                }
+            }
+            .venue {
+            }
+            .town {
+                .view_map {
+                    padding-left: 10px;
+                    color: $gray;
+                    font-size: 14px;
+                }
+            }
+            .band, .town, .venue {
+                margin: 0;
+            }
+            .town, .venue {
+                font-size: 16px;
+                color: $gray;
+                @media (min-width: $tablet) {
+                    font-size: 20px;
+                }
+                @media (max-width: $phone) {
+                    font-size: 14px;
+                }
+            }
+        }
+        div.date_time {
+            @media (max-width: $phone) {
+                line-height: 1.42em;
+            }
+            text-align: center;
+            .day_of_week {
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 0;
+                @media (max-width: $phone) {
+                    font-size: 18px;
+                }
+            }
+            .date {
+                font-size: 28px;
+                margin: 0;
+                font-weight: 600;
+                line-height: 1em;
+                @media (max-width: $phone) {
+                    font-size: 22px;
+                }
+            }
+            .time {
+                font-weight: 500;
+                font-size: 18px;
+                @media (max-width: $phone) {
+                    font-size: 10px;
+                }
+            }
+            .day_of_week, .time {
+                color: lighten($black, 20%);
+            }
+        }
+    }
+    hr {
+        border-top: 5px solid lighten($gray, 40%);
+    }
+}

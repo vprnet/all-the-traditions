@@ -1,0 +1,103 @@
+div#story_card {
+    background: white;
+    hr {
+        border-top: 5px solid lighten($gray, 40%);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h2#post_header {
+        margin-bottom: 0;
+    }
+    div.top_story {
+        padding: 15px 15px 0;
+        .dateline {
+            margin: 0;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            line-height: 1.3em;
+            @media (max-width: $phone) {
+                font-size: 18px;
+            }
+            a {
+                @include lt_link($black, white, 2px);
+            }
+        }
+        a {
+            @include lt_link($gray, white, 2px);
+        }
+        p.read_article {
+            font-size: 14px;
+            font-weight: 500;
+            a {
+                @include lt_link($gray, white, 2px);
+            }
+        }
+        .byline, .dateline {
+            color: lighten($gray, 20%);
+            font-weight: 500;
+            font-size: 12px;
+            font-size: 12px;
+        }
+        div.landscape_img {
+            img {
+                margin: 0 auto 30px;
+            }
+        }
+        div.portrait_img {
+            div.vertical_img {
+                img {
+                    max-width: 100px;
+                    margin-right: 10px;
+                    margin-top: 4px;
+                }
+            }
+        }
+        .story_text {
+            font-size: 18px;
+            font-weight: 300;
+            color: lighten($black, 5%);
+        }
+        @media (max-width: $phone) {
+            p {
+                font-size: 14px;
+            }
+            .audio_title {
+                display: none;
+            }
+            .duration {
+                font-size: 16px;
+                padding: 8px 25px;
+            }
+        }
+    }
+}
+
+#archive_link {
+    text-decoration: none;
+}
+
+#archive {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    p {
+        text-align: center;
+        font-size: 24px;
+        color: lighten($gray, 10%);
+        font-weight: 400;
+        @media (max-width: $phone) {
+            font-size: 18px;
+        }
+    }
+    span {
+        border-bottom: 3px solid lighten($gray, 45%);
+    }
+    &:hover {
+        span {
+            border-color: lighten($gray, 35%);
+        }
+    }
+}

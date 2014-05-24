@@ -1,0 +1,95 @@
+body {
+    background: lighten($gray, 40%);
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+h2.header {
+    background: lighten($red, 5%);
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hide_phone {
+    @media (max-width: $phone) {
+        display: none;
+    }
+}
+.show_phone {
+    @media (min-width: $phone) {
+        display: none;
+    }
+}
+
+#mobile_title {
+    background: white;
+    h2 {
+        background: $blue;
+    }
+    p {
+        padding: 5px 15px 20px;
+    }
+}
+
+.hide_big {
+    @media (min-width: $laptop) {
+        display: none;
+    }
+}
+
+.hide_small {
+    @media (max-width: $laptop) {
+        display: none;
+    }
+}
+
+span.showtime {
+    color: darken($gray, 5%);
+    font-weight: 500;
+}
+
+div.about_traditions {
+    background: white;
+    h2 {
+        background: $blue;
+        color: white;
+        padding: 10px;
+        font-size: 24px;
+        text-align: center;
+        @media (max-width: $phone) {
+            margin-bottom: 0;
+        }
+    }
+    img {
+        margin: 0 auto 15px;
+    }
+    .about_copy {
+        padding: 0 15px 10px;
+    }
+    #robert {
+        font-weight: 400;
+    }
+}
+
+div.about_traditions.hide_big {
+    margin-bottom: 20px;
+}
+
+#marcomm {
+    margin-top: 20px;
+}
+
+nav.navbar {
+    margin-bottom: 0;
+}

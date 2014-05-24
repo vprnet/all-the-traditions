@@ -1,0 +1,15 @@
+div#uw, div#mc {
+    background: white;
+    text-align: center;
+    padding-bottom: 10px;
+    h2 {
+        background: $blue;
+        color: white;
+        padding: 10px;
+        font-size: 24px;
+        margin-bottom: 15px;
+        @media (max-width: $laptop) {
+            margin-top: 0;
+        }
+    }
+}

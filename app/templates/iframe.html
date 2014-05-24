@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }} | VPR{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="mobile_title" class="visible-xs">
+                <h2 class="header">{{ page_title }}</h2>
+                <p>Listen to All The Traditions Sundays at 7:00PM or <a href="http://www.vpr.net/music-player/">online</a> at 8AM, 12PM, 4PM, 8PM and 12AM.</p>
+            </div>
+            <iframe src="http://composer.nprstations.org/widgets/iframe/searchlist.html?station=5180286ee1c8bf264f49f078&prog_id=51802879e1c8bf264f49f095&visible=searchlist" width="100%" height="400px" frameborder="0" seamless></iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script-ck.js') }}"></script>
+{% endblock %}

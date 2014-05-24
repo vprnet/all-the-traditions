@@ -1,0 +1,49 @@
+<div id="story_card">
+{% import "_macros.html" as macros %}
+    <h2 id="post_header" class="header">Posts</h2>
+{% for story in stories %}
+    <div class="top_story">
+        {% if story.image and story.landscape %}
+            <div class="landscape_img">
+                <a href="{{ story.link }}"><img src="{{ url_for('static', filename=story.image) }}" class="img-responsive cover_photo" alt="{{ story.title }}"></a>
+            </div>
+        {% endif %}
+        <p class="dateline">{{ story.date }}</p>
+        <h3 class="title"><a href="{{ story.link }}">{{ story.title }}</a></h3>
+        {% if story.byline %}
+            <p class="byline">
+            {% if story.byline.url %}
+                By <a href="{{ story.byline.url }}" alt="{{ story.byline.name }} bio">{{ story.byline.name|upper }}</a>
+            {% else %}
+            By {{ story.byline.name|upper }}
+            {% endif %}</p>
+        {% endif %}
+        <div class="row story_text">
+            {% if story.image and not story.landscape %}
+            <div class="col-xs-12 portrait_img">
+                <div class="vertical_img">
+                    <a href="{{ story.link }}"><img src="{{ url_for('static', filename=story.image) }}" class="img-responsive pull-left" alt="{{ story.title }}"></a>
+                </div>
+            {% else %}
+            <div class="col-xs-12">
+            {% endif %}
+            {% for paragraph in story.text %}
+                <p>{{ paragraph|safe }}</p>
+            {% endfor %}
+                {% if story.audio %}
+                {{ macros.player(story.audio.mp3, story.audio.duration, "Listen To The Report") }}
+                {% endif %}
+                <p class="read_article">
+                    <span class="file glyphicon glyphicon-file"></span> <a href="{{ story.link }}">Read the Article</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endfor %}
+</div>
+<a id="archive_link" href="http://digital.vpr.net/programs/all-traditions">
+<div class="top_story" id="archive">
+    <p><span>More {{ page_title }} Posts</span></p>
+</div>
+</a>
