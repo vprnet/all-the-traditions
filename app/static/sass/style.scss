@@ -1,0 +1,39 @@
+@import "bootstrap";
+@import "mixin";
+@import "vpr";
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    @media (max-width: $phone) {
+        font-size: 1.5em;
+    }
+}
+.calendar {
+    border: 1px solid #d6d6d6;
+    .concert {
+        padding: 20px;
+        @media (max-width: $phone) {
+            padding: 20px 10px;
+        }
+        &.odd {
+            background: #f9f9f9;
+            border-top: 2px solid #d6d6d6;
+            border-bottom: 2px solid #d6d6d6;
+        }
+        p {
+            margin-bottom: 0.5em;
+            @media (max-width: $phone) {
+                font-size: 0.9em;
+            }
+            line-height: 0.8em;
+        }
+        h3 {
+            @media (max-width: $phone) {
+                font-size: 1.3em;
+                margin-bottom: 0.5em;
+            }
+            margin-top: 0;
+        }
+    }
+}

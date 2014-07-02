@@ -1,17 +1,14 @@
-{% for concert in concerts %}
+<h2>Performance Calendar</h2>
 <div class="row">
-    <div class="concert_card">
-        <div class="band_venue col-xs-9 col-sm-7 col-sm-offset-1 col-md-8 col-md-offset-0 col-lg-7 col-lg-offset-1">
-            <h3 class="band">{{ concert.group }}</h3>
-            <p class="venue">{{ concert.venue }}</p>
-            <p class="town">{{ concert.city }}, {{ concert.state }} <span class="view_map">[ <a href="http://maps.google.com?q={{ concert.venue }}, {{ concert.city }}, {{ concert.state }}" alt="Map to {{ concert.venue }}">view map</a> ]</span></p>
+    <div class="calendar col-xs-12">
+        {% for concert in concerts %}
+        <div class="row">
+            <div class="concert col-sm-12 {% if loop.index is divisibleby 2 %}odd{% endif %}">
+                <p>{{ concert.date }} at {{ concert.time }}</p>
+                <h3>{{ concert.group }}</h3>
+                <p>{{ concert.venue }} // {{ concert.city }}, {{ concert.state }} // <a href="http://maps.google.com?q={{ concert.venue }}, {{ concert.city }}, {{ concert.state }}" alt="Map to {{ concert.venue }}">view map</a></p>
+            </div>
         </div>
-        <div class="date_time col-xs-3 col-sm-offset-1">
-            <p class="day_of_week">{{ concert.day_of_week }}</p>
-            <p class="date">{{ concert.date }}</p>
-            <p class="time">at {{ concert.time }}</p>
-        </div>
+        {% endfor %}
     </div>
 </div>
-<hr>
-{% endfor %}
